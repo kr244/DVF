@@ -160,7 +160,7 @@ def update_output_container(selected_statistics, input_year):
     # Total Advertisement Expenditure for each vehicle using pie chart
          # grouping data for plotting.
          # Hint:Use the columns Vehicle_Type and Advertising_Expenditure
-        exp_data=yearly_data.groupby("Vehicle_Type")["Advertising_Expenditure"].sum()
+        exp_data=yearly_data.groupby("Vehicle_Type")["Advertising_Expenditure"].sum().reset_index()
         Y_chart4 = dcc.Graph(figure=px.pie(exp_data, values="Advertising_Expenditure", names="Vehicle_Type", title="Total Advertisement Expenditure for Each Vehicle"))
 
 #TASK 2.6: Returning the graphs for displaying Yearly data
